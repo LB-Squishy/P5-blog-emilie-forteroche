@@ -15,6 +15,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Emilie Forteroche</title>
     <link rel="stylesheet" href="./css/style.css">
+    <script src="https://kit.fontawesome.com/749a47ec2c.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -22,18 +23,25 @@
         <nav>
             <a href="index.php">Articles</a>
             <a href="index.php?action=apropos">À propos</a>
-            <?php 
-                // Si on est connecté, on affiche le bouton de déconnexion, sinon, on affiche le bouton de connexion : 
-                if (isset($_SESSION['user'])) {
-                    echo '<a href="index.php?action=disconnectUser">Déconnexion</a>';
-                }
-                ?>
         </nav>
         <h1>Emilie Forteroche</h1>
     </header>
 
     <main>    
         <?= $content /* Ici est affiché le contenu réel de la page. */ ?>
+        <?php 
+            // Si on est connecté, on affiche le menu d'administration: 
+            if (isset($_SESSION['user'])) {
+                $action = isset($_GET['action']) ? $_GET['action'] : 'admin'; // Obtenir l'action actuelle
+                ?>
+                <div class="adminBar">
+                    <a class="<?= $action === 'admin' ? 'active' : '' ?>" href="index.php?action=admin"><i class="fa fa-pen-to-square"></i></a>
+                    <a class="<?= $action === 'monitoring' ? 'active' : '' ?>" href="index.php?action=monitoring"><i class="fa fa-chart-simple"></i></a>
+                    <a class="<?= $action === 'disconnectUser' ? 'active' : '' ?>" href="index.php?action=disconnectUser"><i class="fa fa-power-off"></i></a>
+                </div>
+                <?php 
+            }
+        ?>
     </main>
     
     <footer>
