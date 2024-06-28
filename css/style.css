@@ -274,7 +274,7 @@ a.info {
 .adminArticle table {
     width: 100%;
     border-collapse: collapse;
-    
+    background-color: var(--commentColor);
 }
 
 .adminArticle th, .adminArticle td {
@@ -299,6 +299,14 @@ a.info {
     background-color: var(--commentColor);
     border-radius: 10px;
     padding: 6px 20px;
+}
+
+.lightbackground {
+    background-color: var(--headerColor);
+}
+
+.darkbackground {
+    background-color: var(--commentPaleColor)
 }
 
 /* Page de détail d'un article */

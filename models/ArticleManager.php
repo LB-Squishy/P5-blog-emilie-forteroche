@@ -20,6 +20,27 @@ class ArticleManager extends AbstractEntityManager
         }
         return $articles;
     }
+
+    /**
+     * Récupère tous les articles avec le nombre de commentaires.
+     * @return array : un tableau d'objets Article.
+     */
+    public function getAllArticlesWithComments() : array
+    {
+        $sql = "SELECT a.*, COUNT(c.id) as comment_count
+                FROM article a
+                LEFT JOIN comment c ON a.id = c.id_article
+                GROUP BY a.id";
+        
+        $result = $this->db->query($sql);
+        $articles = [];
+    
+        while ($article = $result->fetch()) {
+            $articles[] = new Article($article);
+        }
+    
+        return $articles;
+    }
     
     /**
      * Récupère un article par son id.

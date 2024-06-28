@@ -12,6 +12,7 @@
     private ?DateTime $dateCreation = null;
     private ?DateTime $dateUpdate = null;  
     private int $view_count = 0;
+    private int $comment_count = 0;
 
     /**
      * Setter pour l'id de l'utilisateur. 
@@ -142,5 +143,20 @@
     public function getViewCount() : int 
     {
         return $this->view_count;
+    }
+
+    // Setter pour le nombre de commentaire
+    public function setCommentCount(int $commentCount) : void 
+    {
+        $this->comment_count = $commentCount;
+    }
+
+    /**
+     * Getter pour le nombre de commentaire
+     * @return int
+     */
+    public function getCommentCount() : int 
+    {
+        return $this->comment_count;
     }
  }
