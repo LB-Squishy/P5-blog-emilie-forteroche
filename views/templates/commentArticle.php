@@ -4,7 +4,7 @@
      */
 ?>
 
-<h2>Commentaires</h2>
+<h2>Commentaires de l'article :<br><br>"<?php echo $titleArticle ?>"</h2>
 
 <div class="adminArticle">
     <table>

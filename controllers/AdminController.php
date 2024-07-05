@@ -62,6 +62,7 @@ class AdminController {
 
         // Récupération l'id de l'article.
         $idArticle = Utils::request("idArticle");
+        $titleArticle = Utils::request("titleArticle");
 
         // On récupère les commentaires.
         $commentManager = new CommentManager();
@@ -72,6 +73,7 @@ class AdminController {
         $view->render("commentArticle", [
             'comments' => $comments,
             'idArticle' => $idArticle,
+            'titleArticle' => $titleArticle,
         ]);
     }
 
@@ -87,6 +89,7 @@ class AdminController {
         // Récupération l'id de l'article.
         $idComment = Utils::request("idComment");
         $idArticle = Utils::request("idArticle");
+        $titleArticle = Utils::request("titleArticle");
 
         // On récupère les commentaires.
         $commentManager = new CommentManager();
@@ -99,6 +102,7 @@ class AdminController {
         $view->render("commentArticle", [
             'comments' => $comments,
             'idArticle' => $idArticle,
+            'titleArticle' => $titleArticle,
         ]);
     }
 

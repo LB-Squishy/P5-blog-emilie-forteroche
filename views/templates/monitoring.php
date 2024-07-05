@@ -72,7 +72,7 @@
                 <td>
                     <div class="commentsLink">
                         <?= $article->getCommentCount() ?>
-                        <a class="commentsLink-btn" href="index.php?action=commentArticle&idArticle=<?= $article->getId() ?>"><i class="fa fa-pen-to-square"></i></a>
+                        <a class="commentsLink-btn" href="index.php?action=commentArticle&idArticle=<?= $article->getId() ?>&titleArticle=<?= $article->getTitle() ?>"><i class="fa fa-pen-to-square"></i></a>
                     </div>
                 </td>
             </tr>

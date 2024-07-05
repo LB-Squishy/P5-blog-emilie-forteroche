@@ -12,8 +12,8 @@
         <div class="articleLine">
             <div class="title"><?= $article->getTitle() ?></div>
             <div class="content"><?= $article->getContent(200) ?></div>
-            <div><a class="submit" href="index.php?action=showUpdateArticleForm&id=<?= $article->getId() ?>">Modifier</a></div>
-            <div><a class="submit" href="index.php?action=deleteArticle&id=<?= $article->getId() ?>" <?= Utils::askConfirmation("Êtes-vous sûr de vouloir supprimer cet article ?") ?> >Supprimer</a></div>
+            <div><a class="submit" href="index.php?action=showUpdateArticleForm&id=<?= $article->getId() ?>"><i class="fa fa-pen-to-square"></i></a></div>
+            <div><a class="submit" href="index.php?action=deleteArticle&id=<?= $article->getId() ?>" <?= Utils::askConfirmation("Êtes-vous sûr de vouloir supprimer cet article ?") ?> ><i class="fa fa-trash"></i></a></div>
         </div>
     <?php } ?>
 </div>
