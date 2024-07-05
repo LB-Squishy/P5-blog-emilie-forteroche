@@ -52,6 +52,57 @@ class AdminController {
     }
 
     /**
+     * Affiche les commentaires d'un article.
+     * @return void
+     */
+    public function showComment() : void
+    {
+        // On vérifie que l'utilisateur est connecté.
+        $this->checkIfUserIsConnected();
+
+        // Récupération l'id de l'article.
+        $idArticle = Utils::request("idArticle");
+
+        // On récupère les commentaires.
+        $commentManager = new CommentManager();
+        $comments = $commentManager->getAllCommentsByArticleId($idArticle);
+    
+        // On affiche la page de commentaires de l'article.
+        $view = new View("commentArticle");
+        $view->render("commentArticle", [
+            'comments' => $comments,
+            'idArticle' => $idArticle,
+        ]);
+    }
+
+    /**
+     * Supprimer un commentaire d'un article.
+     * @return void
+     */
+    public function deleteComment() : void
+    {
+        // On vérifie que l'utilisateur est connecté.
+        $this->checkIfUserIsConnected();
+
+        // Récupération l'id de l'article.
+        $idComment = Utils::request("idComment");
+        $idArticle = Utils::request("idArticle");
+
+        // On récupère les commentaires.
+        $commentManager = new CommentManager();
+        $comment = $commentManager->getCommentById($idComment);
+        $commentManager->deleteComment($comment);
+        $comments = $commentManager->getAllCommentsByArticleId($idArticle);
+    
+        // On affiche la page de commentaires de l'article.
+        $view = new View("commentArticle");
+        $view->render("commentArticle", [
+            'comments' => $comments,
+            'idArticle' => $idArticle,
+        ]);
+    }
+
+    /**
      * Vérifie que l'utilisateur est connecté.
      * @return void
      */

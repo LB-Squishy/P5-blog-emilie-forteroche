@@ -12,7 +12,7 @@ class CommentManager extends AbstractEntityManager
      */
     public function getAllCommentsByArticleId(int $idArticle) : array
     {
-        $sql = "SELECT * FROM comment WHERE id_article = :idArticle";
+        $sql = "SELECT * FROM comment WHERE id_article = :idArticle ORDER BY date_creation DESC";
         $result = $this->db->query($sql, ['idArticle' => $idArticle]);
         $comments = [];
 

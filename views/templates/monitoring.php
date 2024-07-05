@@ -3,8 +3,6 @@
      * Affichage de la partie admin : liste des articles avec un bouton "modifier" pour chacun. 
      * Et un formulaire pour ajouter un article. 
      */
-    // var_dump($articles);
-    // exit;
 ?>
 
 <h2>Statistiques des articles</h2>
@@ -74,7 +72,7 @@
                 <td>
                     <div class="commentsLink">
                         <?= $article->getCommentCount() ?>
-                        <a class="commentsLink-btn" href="#"><i class="fa fa-pen-to-square"></i></a>
+                        <a class="commentsLink-btn" href="index.php?action=commentArticle&idArticle=<?= $article->getId() ?>"><i class="fa fa-pen-to-square"></i></a>
                     </div>
                 </td>
             </tr>
