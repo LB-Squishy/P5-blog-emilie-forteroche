@@ -408,6 +408,30 @@ a.info {
     border: 1px solid var(--backgroundColor);
 }
 
+.articleSort {
+    display: flex;
+    justify-content: space-between;
+}
+
+.articleSort__arrow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.articleSort__arrow--btn {
+    display: flex;
+    align-items: center;
+}
+
+.articleSort__arrow--btn:hover {
+    color: var(--titleColor);
+}
+
+.articleSort__arrow--active {
+    color: var(--titleColor);
+}
+
 /** 
  * Footer global de la page.
  */

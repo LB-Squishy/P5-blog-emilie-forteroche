@@ -34,14 +34,20 @@ class AdminController {
         // On vérifie que l'utilisateur est connecté.
         $this->checkIfUserIsConnected();
 
+        // On récupère les paramètres de tri
+        $sortName = Utils::request('sortName', 'date_creation');
+        $sortOrder = Utils::request('sortOrder', 'DESC');
+
         // On récupère les articles.
         $articleManager = new ArticleManager();
-        $articles = $articleManager->getAllArticlesWithComments();
+        $articles = $articleManager->getAllArticlesWithCommentsSort($sortName, $sortOrder);
 
         // On affiche la page de monitoring.
         $view = new View("Monitoring");
         $view->render("monitoring", [
-            'articles' => $articles
+            'articles' => $articles,
+            'sortName' => $sortName,
+            'sortOrder' => $sortOrder,
         ]);
     }
 
