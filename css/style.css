@@ -301,6 +301,11 @@ a.info {
     padding: 6px 20px;
 }
 
+.adminArticle .delete-btn{
+    display: flex;
+    justify-content: center;
+}
+
 .lightbackground {
     background-color: var(--headerColor);
 }

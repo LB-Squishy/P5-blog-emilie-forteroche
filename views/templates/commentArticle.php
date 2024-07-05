@@ -19,6 +19,9 @@
                 <th>
                     <p>Date de Publication</p>
                 </th>
+                <th>
+                    <p>Suppression</p>
+                </th>
             </tr>
         </thead>
         <tbody>
@@ -29,8 +32,8 @@
                 <td><?= $comment->getContent() ?></td>
                 <td><?= ucfirst(Utils::convertDateToFrenchFormat($comment->getDateCreation())) ?></td>
                 <td>
-                    <div class="commentsLink">
-                        <a class="commentsLink-btn" href="index.php?action=deleteComment&idComment=<?= $comment->getId() ?>&idArticle=<?= $idArticle ?>">
+                    <div class="delete-btn">
+                        <a class="commentsLink-btn" href="index.php?action=deleteComment&idComment=<?= $comment->getId() ?>&idArticle=<?= $idArticle ?>"<?= Utils::askConfirmation("Êtes-vous sûr de vouloir supprimer ce commentaire ?") ?>>
                             <i class="fa fa-trash"></i>
                         </a>     
                     </div>
