@@ -20,7 +20,7 @@
                     <p>Date de Publication</p>
                 </th>
                 <th>
-                    <p>Suppression</p>
+                    <p>Supprimer</p>
                 </th>
             </tr>
         </thead>
