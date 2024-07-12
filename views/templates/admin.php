@@ -12,10 +12,10 @@
         <thead>
             <tr>
                 <th>
-                    <p>Nom de l'article</p>
+                    <?= Utils::tableSort("Titre de l'Article", "title", $currentSortName, $sortOrder, "index.php?action=admin") ?>
                 </th>
                 <th>
-                    <p>Contenu</p>
+                    <?= Utils::tableSort("Contenu", "content", $currentSortName, $sortOrder, "index.php?action=admin") ?>
                 </th>
                 <th>
                     <p>Editer</p>

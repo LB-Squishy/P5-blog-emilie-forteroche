@@ -14,14 +14,20 @@ class AdminController {
         // On vérifie que l'utilisateur est connecté.
         $this->checkIfUserIsConnected();
 
+        // On récupère les paramètres de tri
+        $sortName = Utils::request('sortName', 'date_creation');
+        $sortOrder = Utils::request('sortOrder', 'DESC');
+
         // On récupère les articles.
         $articleManager = new ArticleManager();
-        $articles = $articleManager->getAllArticles();
+        $articles = $articleManager->getAllArticles($sortName, $sortOrder);
 
         // On affiche la page d'administration.
         $view = new View("Administration");
         $view->render("admin", [
-            'articles' => $articles
+            'articles' => $articles,
+            'currentSortName' => $sortName,
+            'sortOrder' => $sortOrder,
         ]);
     }
 

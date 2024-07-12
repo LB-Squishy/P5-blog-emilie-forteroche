@@ -9,9 +9,12 @@ class ArticleManager extends AbstractEntityManager
      * Récupère tous les articles.
      * @return array : un tableau d'objets Article.
      */
-    public function getAllArticles() : array
+    public function getAllArticles(?string $sortName = null, ?string $sortOrder = null) : array
     {
         $sql = "SELECT * FROM article";
+        if ($sortName && $sortOrder) {
+            $sql .= " ORDER BY $sortName $sortOrder";
+        }
         $result = $this->db->query($sql);
         $articles = [];
 
