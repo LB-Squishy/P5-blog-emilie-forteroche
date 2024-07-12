@@ -46,7 +46,7 @@ class AdminController {
         $view = new View("Monitoring");
         $view->render("monitoring", [
             'articles' => $articles,
-            'sortName' => $sortName,
+            'currentSortName' => $sortName,
             'sortOrder' => $sortOrder,
         ]);
     }

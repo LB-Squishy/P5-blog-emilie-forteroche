@@ -87,4 +87,33 @@ class Utils {
         return $_REQUEST[$variableName] ?? $defaultValue;
     }
 
+    /**
+     * Cette méthode permet de génèrer un entête de tableau avec tri intégré.
+     * @param string $title : le titre de l'entête de tableau.
+     * @param string $sortName : le nom du type de tri.
+     * @param string $currentSortName : le nom du type de tri courant.
+     * @param string $sortOrder : l'ordre de tri.
+     * @param string $sortUrl : l'url sur laquelle est effectué le tri'.
+     * @return string : l'entête de tableau en html.
+     */
+    public static function tableSort(string $title, string $sortName, ?string $currentSortName, ?string $sortOrder, string $sortUrl) : string
+    {
+        $ascActive = $sortName == $currentSortName && $sortOrder == 'ASC' ? 'articleSort__arrow--active' : '';
+        $descActive = $sortName == $currentSortName && $sortOrder == 'DESC' ? 'articleSort__arrow--active' : '';
+
+        return 
+        "
+            <div class=\"articleSort\">
+                <p>$title</p>
+                <div class=\"articleSort__arrow\">
+                    <a class=\"articleSort__arrow--btn $ascActive\" href=\"{$sortUrl}&sortName={$sortName}&sortOrder=ASC\">
+                        <i class=\"fa-solid fa-sort-up\"></i></a>
+                    <a class=\"articleSort__arrow--btn $descActive\" href=\"{$sortUrl}&sortName={$sortName}&sortOrder=DESC\">
+                        <i class=\"fa-solid fa-sort-down\"></i>
+                    </a>
+                </div>
+            </div>
+        ";
+    }
+
 }
