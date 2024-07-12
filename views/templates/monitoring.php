@@ -66,12 +66,12 @@
         <?php $lignColorClass = 'lightbackground' ?>
         <?php foreach ($articles as $article) { ?>
             <tr class = "<?= $lignColorClass ?>">
-                <td><?= $article->getTitle() ?></td>
+                <td><?= Utils::format($article->getTitle()) ?></td>
                 <td><?= ucfirst(Utils::convertDateToFrenchFormat($article->getDateCreation())) ?></td>
-                <td><?= $article->getViewCount() ?></td>
+                <td><?= Utils::format($article->getViewCount()) ?></td>
                 <td>
                     <div class="commentsLink">
-                        <?= $article->getCommentCount() ?>
+                        <?= Utils::format($article->getCommentCount()) ?>
                         <a class="commentsLink-btn" href="index.php?action=commentArticle&idArticle=<?= $article->getId() ?>&titleArticle=<?= $article->getTitle() ?>"><i class="fa fa-pen-to-square"></i></a>
                     </div>
                 </td>

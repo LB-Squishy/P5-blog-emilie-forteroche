@@ -32,7 +32,7 @@
         <?php 
             // Si on est connecté, on affiche le menu d'administration: 
             if (isset($_SESSION['user'])) {
-                $action = isset($_GET['action']) ? $_GET['action'] : 'admin'; // Obtenir l'action actuelle
+                $action = Utils::format(isset($_GET['action']) ? $_GET['action'] : 'admin'); // Obtenir l'action actuelle
                 ?>
                 <div class="adminBar">
                     <a class="<?= $action === 'admin' ? 'active' : '' ?>" href="index.php?action=admin"><i class="fa fa-pen-to-square"></i></a>

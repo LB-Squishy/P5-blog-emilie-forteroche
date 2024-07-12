@@ -28,8 +28,8 @@
         <?php $lignColorClass = 'lightbackground' ?>
         <?php foreach ($comments as $comment) { ?>
             <tr class = "<?= $lignColorClass ?>">
-                <td><?= $comment->getPseudo() ?></td>
-                <td><?= $comment->getContent() ?></td>
+                <td><?= Utils::format($comment->getPseudo()) ?></td>
+                <td><?= Utils::format($comment->getContent()) ?></td>
                 <td><?= ucfirst(Utils::convertDateToFrenchFormat($comment->getDateCreation())) ?></td>
                 <td>
                     <div class="delete-btn">

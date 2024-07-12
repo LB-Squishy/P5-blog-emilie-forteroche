@@ -7,9 +7,9 @@
 <div class="articleList">
     <?php foreach($articles as $article) { ?>
         <article class="article">
-            <h2><?= $article->getTitle() ?></h2>
+            <h2><?= Utils::format($article->getTitle()) ?></h2>
             <span class="quotation">«</span>
-            <p><?= $article->getContent(400) ?></p>
+            <p><?= Utils::format($article->getContent(400)) ?></p>
             
             <div class="footer">
                 <span class="info"> <?= ucfirst(Utils::convertDateToFrenchFormat($article->getDateCreation())) ?></span>
