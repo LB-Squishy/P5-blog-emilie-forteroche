@@ -4,7 +4,7 @@
      */
 ?>
 
-<h2>Commentaires de l'article :<br><br>"<?php echo $titleArticle ?>"</h2>
+<h2>Commentaires de l'article :<br><br><?= Utils::format(strip_tags($titleArticle)); ?></h2>
 
 <div class="adminArticle">
     <table>
@@ -33,7 +33,7 @@
                 <td><?= ucfirst(Utils::convertDateToFrenchFormat($comment->getDateCreation())) ?></td>
                 <td>
                     <div class="delete-btn">
-                        <a class="commentsLink-btn" href="index.php?action=deleteComment&idComment=<?= $comment->getId() ?>&idArticle=<?= $idArticle ?>"<?= Utils::askConfirmation("Êtes-vous sûr de vouloir supprimer ce commentaire ?") ?>>
+                        <a class="commentsLink-btn" href="index.php?action=deleteComment&idComment=<?= htmlspecialchars($comment->getId()) ?>&idArticle=<?= htmlspecialchars($idArticle) ?>&titleArticle=<?= Utils::format($titleArticle) ?>"<?= Utils::askConfirmation("Êtes-vous sûr de vouloir supprimer ce commentaire ?") ?>>
                             <i class="fa fa-trash"></i>
                         </a>     
                     </div>

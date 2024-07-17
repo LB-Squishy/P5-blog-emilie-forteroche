@@ -50,7 +50,7 @@
             <textarea name="content" id="content" required></textarea>
 
             <input type="hidden" name="action" value="addComment">
-            <input type="hidden" name="idArticle" value="<?= $article->getId() ?>">
+            <input type="hidden" name="idArticle" value="<?= htmlspecialchars($article->getId()) ?>">
 
             <button class="submit">Ajouter un commentaire</button>
         </div>

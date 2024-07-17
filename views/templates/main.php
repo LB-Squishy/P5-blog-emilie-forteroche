@@ -32,12 +32,13 @@
         <?php 
             // Si on est connecté, on affiche le menu d'administration: 
             if (isset($_SESSION['user'])) {
-                $action = Utils::format(isset($_GET['action']) ? $_GET['action'] : 'admin'); // Obtenir l'action actuelle
+                // Obtenir l'action actuelle pour appliqué la classe
+                $action = isset($_GET['action']) ? $_GET['action'] : 'admin'; 
                 ?>
                 <div class="adminBar">
-                    <a class="<?= $action === 'admin' ? 'active' : '' ?>" href="index.php?action=admin"><i class="fa fa-pen-to-square"></i></a>
-                    <a class="<?= $action === 'monitoring' ? 'active' : '' ?>" href="index.php?action=monitoring"><i class="fa fa-chart-simple"></i></a>
-                    <a class="<?= $action === 'disconnectUser' ? 'active' : '' ?>" href="index.php?action=disconnectUser"><i class="fa fa-power-off"></i></a>
+                    <a class="<?= $action === 'admin' ? 'adminBarActive' : '' ?>" href="index.php?action=admin"><i class="fa fa-pen-to-square"></i></a>
+                    <a class="<?= $action === 'monitoring' ? 'adminBarActive' : '' ?>" href="index.php?action=monitoring"><i class="fa fa-chart-simple"></i></a>
+                    <a class="<?= $action === 'disconnectUser' ? 'adminBarActive' : '' ?>" href="index.php?action=disconnectUser"><i class="fa fa-power-off"></i></a>
                 </div>
                 <?php 
             }

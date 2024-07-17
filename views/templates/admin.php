@@ -29,16 +29,16 @@
         <?php $lignColorClass = 'lightbackground' ?>
         <?php foreach ($articles as $article) { ?>
             <tr class = "<?= $lignColorClass ?>">
-                <td><?= $article->getTitle() ?></td>
-                <td><?= $article->getContent(200) ?></td>
+                <td><?= Utils::format($article->getTitle()) ?></td>
+                <td><?= Utils::format($article->getContent(200)) ?></td>
                 <td>
                     <div class="delete-btn">
-                        <a class="submit" href="index.php?action=showUpdateArticleForm&id=<?= $article->getId() ?>"><i class="fa fa-pen-to-square"></i></a>
+                        <a class="submit" href="index.php?action=showUpdateArticleForm&id=<?= htmlspecialchars($article->getId()) ?>"><i class="fa fa-pen-to-square"></i></a>
                     </div>
                 </td>
                 <td>
                     <div class="delete-btn">
-                        <a class="submit" href="index.php?action=deleteArticle&id=<?= $article->getId() ?>" <?= Utils::askConfirmation("Êtes-vous sûr de vouloir supprimer cet article ?") ?> ><i class="fa fa-trash"></i></a>
+                        <a class="submit" href="index.php?action=deleteArticle&id=<?= htmlspecialchars($article->getId()) ?>" <?= Utils::askConfirmation("Êtes-vous sûr de vouloir supprimer cet article ?") ?> ><i class="fa fa-trash"></i></a>
                     </div>
                 </td>
             </tr>

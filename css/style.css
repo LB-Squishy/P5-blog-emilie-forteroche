@@ -185,8 +185,8 @@ header > nav > a {
     border-radius: 25px;
 }
 
-.active {
-    background-color: var(--headerColor);
+.adminBarActive {
+    background-color: var(--titleColor);
     border-radius: 25px;
 }
 

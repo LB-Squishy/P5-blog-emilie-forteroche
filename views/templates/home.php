@@ -13,7 +13,7 @@
             
             <div class="footer">
                 <span class="info"> <?= ucfirst(Utils::convertDateToFrenchFormat($article->getDateCreation())) ?></span>
-                <a class="info" href="index.php?action=showArticle&id=<?= $article->getId() ?>">Lire +</a>
+                <a class="info" href="index.php?action=showArticle&id=<?= htmlspecialchars($article->getId()) ?>">Lire +</a>
             </div>
         </article>
     <?php } ?>

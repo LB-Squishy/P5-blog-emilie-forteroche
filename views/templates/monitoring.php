@@ -35,7 +35,7 @@
                 <td>
                     <div class="commentsLink">
                         <?= Utils::format($article->getCommentCount()) ?>
-                        <a class="commentsLink-btn" href="index.php?action=commentArticle&idArticle=<?= $article->getId() ?>&titleArticle=<?= $article->getTitle() ?>"><i class="fa fa-pen-to-square"></i></a>
+                        <a class="commentsLink-btn" href="index.php?action=commentArticle&idArticle=<?= htmlspecialchars($article->getId()) ?>&titleArticle=<?= htmlspecialchars($article->getTitle()) ?>"><i class="fa fa-pen-to-square"></i></a>
                     </div>
                 </td>
             </tr>
