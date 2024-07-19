@@ -1,7 +1,7 @@
 <?php 
     /** 
-     * Affichage de la partie admin : liste des articles avec un bouton "modifier" pour chacun. 
-     * Et un formulaire pour ajouter un article. 
+     * Affichage de la partie monitoring : liste des articles avec le nombre de vue et de commentaires.
+     * Ainsi qu'un bouton "modifier" pour administrer les commentaires. 
      */
 ?>
 
