@@ -7,7 +7,7 @@
 <div class="articleList">
     <?php foreach($articles as $article) { ?>
         <article class="article">
-            <h2><?= Utils::format($article->getTitle()) ?></h2>
+            <h2><?= htmlspecialchars($article->getTitle()) ?></h2>
             <span class="quotation">«</span>
             <p><?= Utils::format($article->getContent(400)) ?></p>
             

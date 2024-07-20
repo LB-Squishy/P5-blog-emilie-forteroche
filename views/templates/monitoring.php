@@ -29,12 +29,12 @@
         <?php $lignColorClass = 'lightbackground' ?>
         <?php foreach ($articles as $article) { ?>
             <tr class = "<?= $lignColorClass ?>">
-                <td><?= Utils::format($article->getTitle()) ?></td>
+                <td><?= htmlspecialchars($article->getTitle()) ?></td>
                 <td><?= ucfirst(Utils::convertDateToFrenchFormat($article->getDateCreation())) ?></td>
-                <td><?= Utils::format($article->getViewCount()) ?></td>
+                <td><?= htmlspecialchars($article->getViewCount()) ?></td>
                 <td>
                     <div class="commentsLink">
-                        <?= Utils::format($article->getCommentCount()) ?>
+                        <?= htmlspecialchars($article->getCommentCount()) ?>
                         <a class="commentsLink-btn" href="index.php?action=commentArticle&idArticle=<?= htmlspecialchars($article->getId()) ?>&titleArticle=<?= htmlspecialchars($article->getTitle()) ?>"><i class="fa fa-pen-to-square"></i></a>
                     </div>
                 </td>

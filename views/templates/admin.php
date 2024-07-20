@@ -29,8 +29,8 @@
         <?php $lignColorClass = 'lightbackground' ?>
         <?php foreach ($articles as $article) { ?>
             <tr class = "<?= $lignColorClass ?>">
-                <td><?= Utils::format($article->getTitle()) ?></td>
-                <td><?= Utils::format($article->getContent(200)) ?></td>
+                <td><?= htmlspecialchars($article->getTitle()) ?></td>
+                <td><?= htmlspecialchars($article->getContent(200)) ?></td>
                 <td>
                     <div class="delete-btn">
                         <a class="submit" href="index.php?action=showUpdateArticleForm&id=<?= htmlspecialchars($article->getId()) ?>"><i class="fa fa-pen-to-square"></i></a>

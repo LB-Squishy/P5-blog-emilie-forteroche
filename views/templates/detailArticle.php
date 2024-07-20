@@ -6,7 +6,7 @@
 ?>
 
 <article class="mainArticle">
-    <h2> <?= Utils::format($article->getTitle()) ?> </h2>
+    <h2> <?= htmlspecialchars($article->getTitle()) ?> </h2>
     <span class="quotation">«</span>
     <p><?= Utils::format($article->getContent()) ?></p>
 
@@ -30,7 +30,7 @@
                 echo '<li>';
                 echo '  <div class="smiley">☻</div>';
                 echo '  <div class="detailComment">';
-                echo '      <h3 class="info">Le ' . Utils::convertDateToFrenchFormat($comment->getDateCreation()) . ", " . Utils::format($comment->getPseudo()) . ' a écrit :</h3>';
+                echo '      <h3 class="info">Le ' . Utils::convertDateToFrenchFormat($comment->getDateCreation()) . ", " . htmlspecialchars($comment->getPseudo()) . ' a écrit :</h3>';
                 echo '      <p class="content">' . Utils::format($comment->getContent()) . '</p>';
                 echo '  </div>';
                 echo '</li>';
